@@ -1,14 +1,64 @@
 <odoo>
     <data>
-        <!-- <template id="listing"> -->
-        <!--   <ul> -->
-        <!--     <li t-foreach="objects" t-as="object"> -->
-        <!--       <a t-attf-href="#{ root }/objects/#{ object.id }"> -->
-        <!--         <t t-esc="object.display_name"/> -->
-        <!--       </a> -->
-        <!--     </li> -->
-        <!--   </ul> -->
-        <!-- </template> -->
+        <template id="apparel">
+            <t t-call="website.layout">
+                <h1 class="text-center" style="font-family: Poppins,sans-serif!important;font-weight:600">Apparel Design</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="/promoartwork/static/src/img/apparel_detail.jpg" class="img-responsive"/>
+                        </div>
+                        <div class="col-md-6" style="padding-top:15px;font-size:18px;font-weight:500">
+                            <p>Apparel design is the art of applying design and aesthetics to clothing and its accessories. It is influenced by cultural and social attitudes, and has varied over time and place.</p>
+                            <div style="margin-left:35%;margin-right:auto;">
+                                <button type="button" class="btn btn-primary" id="send_art">Send Art</button>
+                                <button type="button" class="btn btn-primary" id="req_quote">Request Quote</button>
+                            </div>
+                            <script>
+                            $(document).ready(function(){
+                                $("#send_art").click(function(){
+                                    $("#send_artwork").show();
+                                    $("#request_quote").hide();
+                                });
+                                $("#req_quote").click(function(){
+                                    $("#send_artwork").hide();
+                                    $("#request_quote").show();
+                                });
+                            });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="row" id="send_artwork" style="display:none">
+                        <h1 class="text-center">Send Art</h1>
+                        <form action="/send_art/apparel" method="post" class="s_website_form form-horizontal container-fluid mt32" enctype="multipart/form-data" data-editable-form="false">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label for="po">PO#2:</label>
+                                    <input type="text" class="form-control" id="po" name="po"/>
+                                </div>
+                                <div class="col-md-3 form-group">
+                                    <label for="po">Size:</label>
+                                    <input type="text" class="form-control" id="size_1" name="size_1" width="100px;"/>x<input type="text" class="form-control" id="size_2" name="size_2"/>
+                                </div>
+                                <input type="hidden" class="form-control" t-att-value="service_type"/>
+                                <button type="submit">Submit</button>
+                            </div> 
+                        </form>
+                    </div>
+                    <div class="row" id="request_quote" style="display:none">
+                        <h1 class="text-center">Request Quote</h1>
+                        <form action="/send_art/apparel" method="post" class="s_website_form form-horizontal container-fluid mt32" enctype="multipart/form-data" data-editable-form="false">
+                            <div class="row">
+                                <label for="po">PO#2:</label>
+                                <input type="text" class="form-control" id="po" name="po"/>
+                                <input type="hidden" class="form-control" t-att-value="service_type"/>
+                                <button type="submit">Submit</button>
+                            </div> 
+                        </form>
+                    </div>
+                </div>
+            </t>
+        </template>
         <!-- <template id="object"> -->
         <!--   <h1><t t-esc="object.display_name"/></h1> -->
         <!--   <dl> -->

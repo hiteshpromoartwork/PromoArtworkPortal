@@ -7,3 +7,5 @@ class Website(Website):
     def index(self,**kw):
         super(Website, self).index(**kw)
         return http.request.render('promoartwork.index_page', {})
+    
+    

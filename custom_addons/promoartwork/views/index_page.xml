@@ -36,7 +36,7 @@
                             <!-- <div class="row pt-md"> -->
                             <div class="col-md-2 col-sm-4 col-md-offset-1 col-sm-offset-2 raise">
                                 <div class="img-box">
-                                    <a href="send_order/"><img src="/promoartwork/static/src/img/apparel_design.jpg" class="img-responsive"/></a>
+                                    <a href="/order/apparel"><img src="/promoartwork/static/src/img/apparel_design.jpg" class="img-responsive"/></a>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4 raise">
