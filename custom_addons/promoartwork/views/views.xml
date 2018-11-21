@@ -1,0 +1,76 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="orders">
+      <field name="name">Artwork Requests</field>
+      <field name="model">virtual.artwork</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="customer_name"/>
+          <field name="instructions"/>
+          <field name="artwork_file"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="job_types_tree">
+      <field name="name">Job Types</field>
+      <field name="model">job.types</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+   
+
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="promoartwork.artowoks_action_window">
+      <field name="name">Virtual Requests</field>
+      <field name="res_model">virtual.artwork</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="promoartwork.job_types_action_window">
+      <field name="name">Job Types</field>
+      <field name="res_model">job.types</field>
+      <field name="view_mode">tree</field>
+    </record>
+   
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="promoartwork.action_server">
+      <field name="name">Promoartwork server</field>
+      <field name="model_id" ref="model_promoartwork_promoartwork"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    
+    <menuitem name="Promoartwork" id="promoartwork.menu_root"/>
+   
+    <!-- menu categories -->
+    
+    <menuitem name="Orders" id="promoartwork.menu_1" parent="promoartwork.menu_root"/>
+   
+    <!-- actions -->
+    
+    <menuitem name="Artworks" id="promoartwork.menu_1_list" parent="promoartwork.menu_1"
+              action="promoartwork.artowoks_action_window"/>
+   
+   <menuitem name="Master Data" id="promoartwork.menu_2" parent="promoartwork.menu_root"/>
+    <menuitem name="Job Types" id="promoartwork.job_types" parent="promoartwork.menu_2"
+              action="promoartwork.job_types_action_window"/>
+  </data>
+</odoo>
