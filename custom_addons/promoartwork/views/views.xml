@@ -23,7 +23,55 @@
         </tree>
       </field>
     </record>
-   
+
+    <record model="ir.ui.view" id="size_properties_tree">
+      <field name="name">Sizes For Website</field>
+      <field name="model">size.properties</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="imprint_colors_tree">
+      <field name="name">Imprint Colors</field>
+      <field name="model">imprint.colors</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="imprint_process_tree">
+      <field name="name">Imprint Process</field>
+      <field name="model">imprint.process</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="output_format_tree">
+      <field name="name">Output Format</field>
+      <field name="model">output.format</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+   <record model="ir.ui.view" id="turnaround_time_tree">
+      <field name="name">Turnaround Time</field>
+      <field name="model">turnaround.time</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
 
     <!-- actions opening views on models -->
     
@@ -38,23 +86,37 @@
       <field name="res_model">job.types</field>
       <field name="view_mode">tree</field>
     </record>
-   
 
-    <!-- server action to the one above -->
-    <!--
-    <record model="ir.actions.server" id="promoartwork.action_server">
-      <field name="name">Promoartwork server</field>
-      <field name="model_id" ref="model_promoartwork_promoartwork"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
-      </field>
+    <record model="ir.actions.act_window" id="promoartwork.size_properties_action_window">
+      <field name="name">Size Properties</field>
+      <field name="res_model">size.properties</field>
+      <field name="view_mode">tree</field>
     </record>
-    -->
+
+    <record model="ir.actions.act_window" id="promoartwork.imprint_colors_action_window">
+      <field name="name">Colors</field>
+      <field name="res_model">imprint.colors</field>
+      <field name="view_mode">tree</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="promoartwork.imprint_process_action_window">
+      <field name="name">Imprint Process</field>
+      <field name="res_model">imprint.process</field>
+      <field name="view_mode">tree</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="promoartwork.output_format_action_window">
+      <field name="name">Output Format</field>
+      <field name="res_model">output.format</field>
+      <field name="view_mode">tree</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="promoartwork.turnaround_time_action_window">
+      <field name="name">Turnaround Time</field>
+      <field name="res_model">turnaround.time</field>
+      <field name="view_mode">tree</field>
+    </record>
+   
 
     <!-- Top menu item -->
     
@@ -69,8 +131,18 @@
     <menuitem name="Artworks" id="promoartwork.menu_1_list" parent="promoartwork.menu_1"
               action="promoartwork.artowoks_action_window"/>
    
-   <menuitem name="Master Data" id="promoartwork.menu_2" parent="promoartwork.menu_root"/>
-    <menuitem name="Job Types" id="promoartwork.job_types" parent="promoartwork.menu_2"
+   <menuitem name="Master Data" id="promoartwork.master_data" parent="promoartwork.menu_root"/>
+    <menuitem name="Job Types" id="promoartwork.job_types" parent="promoartwork.master_data"
               action="promoartwork.job_types_action_window"/>
+    <menuitem name="Size Properties" id="promoartwork.size_properties" parent="promoartwork.master_data"
+              action="promoartwork.size_properties_action_window"/>
+    <menuitem name="Colors" id="promoartwork.imprint_colors" parent="promoartwork.master_data"
+              action="promoartwork.imprint_colors_action_window"/>
+    <menuitem name="Imprint Process" id="promoartwork.imprint_process" parent="promoartwork.master_data"
+              action="promoartwork.imprint_process_action_window"/>
+    <menuitem name="Output Format" id="promoartwork.output_format" parent="promoartwork.master_data"
+              action="promoartwork.output_format_action_window"/>
+    <menuitem name="Turnaround Time" id="promoartwork.turnaround_time" parent="promoartwork.master_data"
+              action="promoartwork.turnaround_time_action_window"/>
   </data>
 </odoo>
