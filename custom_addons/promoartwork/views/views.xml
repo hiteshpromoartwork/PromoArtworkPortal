@@ -10,6 +10,29 @@
           <field name="customer_name"/>
           <field name="instructions"/>
           <field name="artwork_file"/>
+          <!-- <field name="color_id"/> -->
+          <field name="process_id"/>
+          <field name="jobType_id"/>
+          <field name="outputformat_id"/>
+          <field name="turnaround_id"/>
+          <!-- <field name="size_id"/> -->
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="request_quotes">
+      <field name="name">Request Quotes</field>
+      <field name="model">request.quote</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="customer_name"/>
+          <field name="instructions"/>
+          <field name="artwork_file"/>
+          <field name="process_id"/>
+          <field name="jobType_id"/>
+          <field name="outputformat_id"/>
+          <field name="turnaround_id"/>
+          <field name="expected_charges"/>
         </tree>
       </field>
     </record>
@@ -75,12 +98,18 @@
 
     <!-- actions opening views on models -->
     
-    <record model="ir.actions.act_window" id="promoartwork.artowoks_action_window">
+    <record model="ir.actions.act_window" id="promoartwork.orders_action_window">
       <field name="name">Virtual Requests</field>
       <field name="res_model">virtual.artwork</field>
       <field name="view_mode">tree,form</field>
     </record>
     
+    <record model="ir.actions.act_window" id="promoartwork.request_quotes_action_window">
+      <field name="name">Request Quotes</field>
+      <field name="res_model">request.quote</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
     <record model="ir.actions.act_window" id="promoartwork.job_types_action_window">
       <field name="name">Job Types</field>
       <field name="res_model">job.types</field>
@@ -128,8 +157,10 @@
    
     <!-- actions -->
     
-    <menuitem name="Artworks" id="promoartwork.menu_1_list" parent="promoartwork.menu_1"
-              action="promoartwork.artowoks_action_window"/>
+    <menuitem name="Artwork Orders" id="promoartwork.menu_1_list" parent="promoartwork.menu_1"
+              action="promoartwork.orders_action_window"/>
+    <menuitem name="Request Quotes" id="promoartwork.menu_2_list" parent="promoartwork.menu_1"
+              action="promoartwork.request_quotes_action_window"/>
    
    <menuitem name="Master Data" id="promoartwork.master_data" parent="promoartwork.menu_root"/>
     <menuitem name="Job Types" id="promoartwork.job_types" parent="promoartwork.master_data"
