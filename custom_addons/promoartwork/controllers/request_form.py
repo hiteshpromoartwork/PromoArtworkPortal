@@ -25,6 +25,25 @@ class RequestForm(http.Controller):
             'turnaround_time': turnaround_time,
             'sizes' : sizes,
         })
+    
+    @http.route('/order/service/<service_name>', auth='user',website=True)
+    def order_artwork(self, service_name, **kw):
+        # import pdb;pdb.set_trace()
+        service_type = request.env['job.types'].search([('name','ilike','Vector Art')])
+        colors = request.env['imprint.colors'].search([])
+        imprint_process = request.env['imprint.process'].search([])
+        output_format = request.env['output.format'].search([])
+        turnaround_time = request.env['turnaround.time'].search([])
+        sizes = request.env['size.properties'].search([])
+        return request.render('promoartwork.order_artwork', {
+            'service_type': service_type,
+            'colors': colors,
+            'imprint_process': imprint_process,
+            'output_format': output_format,
+            'turnaround_time': turnaround_time,
+            'sizes' : sizes,
+            'service_name': service_name,
+        })
 
     @http.route('/send_art/form_submit', auth='user', website=True, csrf=False)
     def send_art(self, **kw):

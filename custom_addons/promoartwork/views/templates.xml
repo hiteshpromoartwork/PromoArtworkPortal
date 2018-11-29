@@ -1,16 +1,16 @@
 <odoo>
     <data>
-        <template id="apparel">
-            <table t-call="website.layout">
-                <h1 class="text-center" style="font-family: Poppins,sans-serif!important;font-weight:600">Apparel Design</h1>
+        <template id="order_artwork">
+            <t t-call="website.layout">
+                <h1 class="text-center" style="font-family: Poppins,sans-serif!important;font-weight:600;text-transform: uppercase;"><span t-esc="service_name"/></h1>
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6">
+                        <!-- <div class="col-md-6">
                             <img src="/promoartwork/static/src/img/apparel_detail.jpg" class="img-responsive"/>
-                        </div>
-                        <div class="col-md-6" style="padding-top:15px;font-size:18px;font-weight:500">
-                            <p>Apparel design is the art of applying design and aesthetics to clothing and its accessories. It is influenced by cultural and social attitudes, and has varied over time and place.</p>
-                            <div style="margin-left:35%;margin-right:auto;">
+                        </div> -->
+                        <div class="col-md-12 text-center" style="padding-top:15px;font-size:18px;font-weight:500">
+                            <p>We take pride in giving our customers the very best possible solutions for Graphic &#38; Embroidery designs, Logo design, Website and Software plans, each made to fit our customer’s unique needs.</p>
+                            <div style="margin-left:auto%;margin-right:auto;">
                                 <button type="button" class="btn btn-primary" id="send_art">Send Art</button>
                                 <button type="button" class="btn btn-primary" id="req_quote">Request Quote</button>
                             </div>
@@ -28,10 +28,11 @@
                             </script>
                         </div>
                     </div>
-                    <form action="/send_art/form_submit" method="post" class="s_website_form form-horizontal container-fluid mt32" enctype="multipart/form-data" data-editable-form="false">
+                    <br /><br />
                     <div class="panel panel-default" id="send_artwork" style="display:none;width:50%;margin-left:auto;margin-right:auto;">
                         <div class="panel-heading text-center" style="font-weight:600;font-size:20px;">SEND ART</div>
                         <div class="panel-body">
+                            <form action="/send_art/form_submit" method="post" class="" enctype="multipart/form-data" data-editable-form="false">
                                 <div class="row">
                                     <div class="col-md-12"><h3>Details</h3></div>
                                 </div>
@@ -42,7 +43,7 @@
                                     </div>
                                 </div>
                                 <div class="row" style="padding-top:10px;">
-                                    <div class="col-md-3">SIZE</div>
+                                    <div class="col-md-3">Size</div>
                                     <div class="col-md-9">
                                         <div class="row">
                                             <div class="col-md-3">
@@ -113,12 +114,12 @@
                                         <textarea type="file" class="form-control" rows="4" id="instructions" name="instructions" required=""/>
                                     </div>
                                 </div>
-                                <!-- <div class="row" style="padding-top:10px;">
+                                <div class="row" style="padding-top:10px;">
                                     <div class="col-md-3">Coupon Code</div>
                                     <div class="col-md-9">
                                         <input type="text" class="form-control" id="coupon_code" name="coupon_code"/>
                                     </div>
-                                </div> -->
+                                </div>
                                 <div class="row" style="padding-top:10px;">
                                     <div class="col-md-12 text-center">
                                         <input type="submit" class="btn btn-primary btn-lg o_website_form_send"/>
@@ -126,14 +127,16 @@
                                         <span id="o_website_form_result"></span> 
                                     </div>
                                 </div>
+                            </form>
                         </div>
                     </div>
-                    </form>
+                    
 
-                    <form action="/request_quote/form_submit" method="post" class="s_website_form form-horizontal container-fluid mt32" enctype="multipart/form-data" data-editable-form="false">
+                    
                     <div class="panel panel-default" id="request_quote" style="display:none;width:50%;margin-left:auto;margin-right:auto;">
                         <div class="panel-heading text-center" style="font-weight:600;font-size:20px;">REQUEST QUOTE</div>
                         <div class="panel-body">
+                            <form action="/request_quote/form_submit" method="post" class="" enctype="multipart/form-data" data-editable-form="false">
                                 <div class="row">
                                     <div class="col-md-12"><h3>Details</h3></div>
                                 </div>
@@ -144,7 +147,7 @@
                                     </div>
                                 </div>
                                 <div class="row" style="padding-top:10px;">
-                                    <div class="col-md-3">SIZE</div>
+                                    <div class="col-md-3">Size</div>
                                     <div class="col-md-9">
                                         <div class="row">
                                             <div class="col-md-3">
@@ -228,11 +231,259 @@
                                         <span id="o_website_form_result"></span> 
                                     </div>
                                 </div>
+                            </form>
                         </div>
                     </div>
-                    </form>
+                    
                 </div>
-            </table>
+            </t>
+        </template>
+        
+         <template id="order_embroidery">
+            <t t-call="website.layout">
+                <h1 class="text-center" style="font-family: Poppins,sans-serif!important;font-weight:600;text-transform: uppercase;"><span t-esc="service_name"/></h1>
+                <div class="container">
+                    <div class="row">
+                        <!-- <div class="col-md-6">
+                            <img src="/promoartwork/static/src/img/apparel_detail.jpg" class="img-responsive"/>
+                        </div> -->
+                        <div class="col-md-12 text-center" style="padding-top:15px;font-size:18px;font-weight:500">
+                            <p>We take pride in giving our customers the very best possible solutions for Graphic &#38; Embroidery designs, Logo design, Website and Software plans, each made to fit our customer’s unique needs.</p>
+                            <div style="margin-left:auto%;margin-right:auto;">
+                                <button type="button" class="btn btn-primary" id="send_art">Send Art</button>
+                                <button type="button" class="btn btn-primary" id="req_quote">Request Quote</button>
+                            </div>
+                            <script>
+                            $(document).ready(function(){
+                                $("#send_art").click(function(){
+                                    $("#send_artwork").show();
+                                    $("#request_quote").hide();
+                                });
+                                $("#req_quote").click(function(){
+                                    $("#send_artwork").hide();
+                                    $("#request_quote").show();
+                                });
+                            });
+                            </script>
+                        </div>
+                    </div>
+                    <br /><br />
+                    <div class="panel panel-default" id="send_artwork" style="display:none;width:50%;margin-left:auto;margin-right:auto;">
+                        <div class="panel-heading text-center" style="font-weight:600;font-size:20px;">SEND ART</div>
+                        <div class="panel-body">
+                            <form action="/send_art/form_submit" method="post" class="" enctype="multipart/form-data" data-editable-form="false">
+                                <div class="row">
+                                    <div class="col-md-12"><h3>Details</h3></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">PO#</div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="po" name="po" required=""/>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-3">Size</div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <input type="number" class="form-control" required="" id="size_1" name="size_1" width="100px;"/>
+                                            </div>
+                                            <div class="col-md-2 text-center">
+                                                <span class="form-control" style="border:none;">X</span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input type="number" class="form-control" id="size_2" required="" name="size_2"/>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <select class="colors form-control o_website_form_input" required="" name="size_property" id="size_property" >
+											        <option selected="selected">--SELECT--</option>
+                                                    <t t-foreach="sizes" t-as="size">
+                                                        <option t-att-value="size.id"><t t-esc="size.name" /></option>
+                                                    </t>
+										        </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-3">Threads</div>
+                                    <div class="col-md-9">
+                                        <input type="number" class="form-control" id="threads_count" required="" name="threads_count"/>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-3">Expected # of stitches</div>
+                                    <div class="col-md-9">
+                                        <input type="number" class="form-control" id="expected_stitches_count" required="" name="expected_stitches_count"/>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-3">Embroidery Location</div>
+                                    <div class="col-md-9">
+                                        <input type="number" class="form-control" id="embroidery_location" required="" name="embroidery_location"/>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-12"><h3>Delivery</h3></div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-3">Output Format</div>
+                                    <div class="col-md-9">
+                                        <select class="output_format form-control o_website_form_input" required="" name="output_format" id="output_format" >
+                                            <option selected="selected">--SELECT--</option>
+                                            <t t-foreach="output_format" t-as="format">
+                                                <option t-att-value="format.id"><t t-esc="format.name" /></option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-3">Upload File (jpg, gif, zip or pdf)</div>
+                                    <div class="col-md-9">
+                                        <input type="file" class="" accept="image/*, .pdf, .zip" required="" id="requested_file" name="requested_file"/>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-3">Turnaround Time</div>
+                                    <div class="col-md-9">
+                                        <select class="imprint_process form-control o_website_form_input" required="" name="turnaround_time" id="turnaround_time" >
+                                            <option selected="selected">--SELECT--</option>
+                                            <t t-foreach="turnaround_time" t-as="tot">
+                                                <option t-att-value="tot.id"><t t-esc="tot.name" /></option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-3">Instructions / Comments</div>
+                                    <div class="col-md-9">
+                                        <textarea type="file" class="form-control" rows="4" id="instructions" name="instructions" required=""/>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-3">Coupon Code</div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="coupon_code" name="coupon_code"/>
+                                    </div>
+                                </div>  
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-12 text-center">
+                                        <input type="submit" class="btn btn-primary btn-lg o_website_form_send"/>
+                                        <input type="reset" class="btn btn-primary btn-lg o_website_form_send"/>
+                                        <span id="o_website_form_result"></span> 
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <div class="panel panel-default" id="request_quote" style="display:none;width:50%;margin-left:auto;margin-right:auto;">
+                        <div class="panel-heading text-center" style="font-weight:600;font-size:20px;">REQUEST QUOTE</div>
+                        <div class="panel-body">
+                            <form action="/request_quote/form_submit" method="post" class="" enctype="multipart/form-data" data-editable-form="false">
+                                <div class="row">
+                                    <div class="col-md-12"><h3>Details</h3></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">PO#</div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="po" name="po"/>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-3">Size</div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <input type="number" class="form-control" id="size_1" name="size_1" width="100px;"/>
+                                            </div>
+                                            <div class="col-md-2 text-center">
+                                                <span class="form-control" style="border:none;">X</span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input type="number" class="form-control" id="size_2" name="size_2"/>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <select class="colors form-control o_website_form_input" name="size_property" id="size_property" >
+											        <option selected="selected">--SELECT--</option>
+                                                    <t t-foreach="colors" t-as="color">
+                                                        <option t-att-value="color.id"><t t-esc="color.name" /></option>
+                                                    </t>
+										        </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-3">Imprint Process</div>
+                                    <div class="col-md-9">
+                                        <select class="imprint_process form-control o_website_form_input" name="imprint_process" id="imprint_process" >
+                                            <option selected="selected">--SELECT--</option>
+                                            <t t-foreach="imprint_process" t-as="process">
+                                                <option t-att-value="process.id"><t t-esc="process.name" /></option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-3">Output Format</div>
+                                    <div class="col-md-9">
+                                        <select class="output_format form-control o_website_form_input" name="output_format" id="output_format" >
+                                            <option selected="selected">--SELECT--</option>
+                                            <t t-foreach="output_format" t-as="format">
+                                                <option t-att-value="format.id"><t t-esc="format.name" /></option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12"><h3>Delivery</h3></div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-3">Upload File (jpg, gif, zip or pdf)</div>
+                                    <div class="col-md-9">
+                                        <input type="file" class="" accept="image/*, .pdf, .zip" id="requested_file" name="requested_file"/>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-3">Turnaround Time</div>
+                                    <div class="col-md-9">
+                                        <select class="imprint_process form-control o_website_form_input" name="turnaround_time" id="turnaround_time" >
+                                            <option selected="selected">--SELECT--</option>
+                                            <t t-foreach="turnaround_time" t-as="tot">
+                                                <option t-att-value="tot.id"><t t-esc="tot.name" /></option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-3">Instructions / Comments</div>
+                                    <div class="col-md-9">
+                                        <textarea type="file" class="form-control" rows="4" id="instructions" name="instructions"/>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-3">Expected Charges</div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="expected_charges" name="expected_charges"/>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-md-12 text-center">
+                                        <input type="submit" class="btn btn-primary btn-lg o_website_form_send"/>
+                                        <input type="reset" class="btn btn-primary btn-lg o_website_form_send"/>
+                                        <span id="o_website_form_result"></span> 
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                </div>
+            </t>
         </template>
     </data>
 </odoo>

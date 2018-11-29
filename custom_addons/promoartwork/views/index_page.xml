@@ -36,139 +36,84 @@
                             <!-- <div class="row pt-md"> -->
                             <div class="col-md-2 col-sm-4 col-md-offset-1 col-sm-offset-2 raise">
                                 <div class="img-box">
-                                    <a href="/order/apparel"><img src="/promoartwork/static/src/img/apparel_design.jpg" class="img-responsive"/></a>
+                                    <a href="/order/service/apparel"><img src="/promoartwork/static/src/img/apparel_design.jpg" class="img-responsive"/></a>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4 raise">
                                 <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/brouchers.jpg" class="img-responsive"/>
+                                    <a href="/order/service/brouchers"><img src="/promoartwork/static/src/img/brouchers.jpg" class="img-responsive"/></a>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4">
                                 <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/business_card.jpg" class="img-responsive"/>
+                                    <a href="/order/service/business_card"><img src="/promoartwork/static/src/img/business_card.jpg" class="img-responsive"/></a>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4">
                                 <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/catalog_design.jpg" class="img-responsive"/>
+                                    <a href="/order/service/catalog_design"><img src="/promoartwork/static/src/img/catalog_design.jpg" class="img-responsive"/></a>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4">
                                 <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/clipping_path.jpg" class="img-responsive"/>
+                                    <a href="/order/service/clipping_path"><img src="/promoartwork/static/src/img/clipping_path.jpg" class="img-responsive"/></a>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-2 col-sm-4 col-md-offset-1 col-sm-offset-2">
                                 <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/cropping.jpg" class="img-responsive"/>
+                                    <a href="/order/service/cropping"><img src="/promoartwork/static/src/img/cropping.jpg" class="img-responsive"/></a>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4">
                                 <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/embroidery.jpg" class="img-responsive">
-
-                                    </img>
+                                    <a href="/order/service/embroidery"><img src="/promoartwork/static/src/img/embroidery.jpg" class="img-responsive"/></a>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4">
                                 <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/flyers.jpg" class="img-responsive">
-
-                                    </img>
+                                    <a href="/order/service/flyers"><img src="/promoartwork/static/src/img/flyers.jpg" class="img-responsive"/></a>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4">
                                 <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/line_art.jpg" class="img-responsive">
-
-                                    </img>
+                                    <a href="/order/service/line_art"><img src="/promoartwork/static/src/img/line_art.jpg" class="img-responsive"/></a>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4">
                                 <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/logo_design.jpg" class="img-responsive">
-
-                                    </img>
+                                    <a href="/order/service/logo_design"><img src="/promoartwork/static/src/img/logo_design.jpg" class="img-responsive"/></a>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-2 col-sm-4 col-md-offset-1 col-sm-offset-2">
                                 <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/paper_proof.jpg" class="img-responsive">
-
-                                    </img>
+                                    <a href="/order/service/paper_proof"><img src="/promoartwork/static/src/img/paper_proof.jpg" class="img-responsive"/></a>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4">
                                 <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/photo_masking.jpg" class="img-responsive">
-
-                                    </img>
+                                    <a href="/order/service/photo_masking"><img src="/promoartwork/static/src/img/photo_masking.jpg" class="img-responsive"/></a>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4">
                                 <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/presentation.jpg" class="img-responsive">
-
-                                    </img>
+                                    <a href="/order/service/presentation"><img src="/promoartwork/static/src/img/presentation.jpg" class="img-responsive"/></a>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4">
                                 <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/product_mockup.jpg" class="img-responsive">
-
-                                    </img>
+                                    <a href="/order/service/product_mockup"><img src="/promoartwork/static/src/img/product_mockup.jpg" class="img-responsive"/></a>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4">
                                 <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/vector_redraw.jpg" class="img-responsive">
-
-                                    </img>
+                                    <a href="/order/service/vector_redraw"><img src="/promoartwork/static/src/img/vector_redraw.jpg" class="img-responsive"/></a>
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="row">
-                            <div class="col-md-2 col-sm-4 col-md-offset-1 col-sm-offset-2">
-                                <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/apparel.jpg" class="img-responsive">
-
-                                    </img>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4">
-                                <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/apparel.jpg" class="img-responsive">
-
-                                    </img>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4">
-                                <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/apparel.jpg" class="img-responsive">
-
-                                    </img>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4">
-                                <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/apparel.jpg" class="img-responsive">
-
-                                    </img>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-4">
-                                <div class="img-box">
-                                    <img src="/promoartwork/static/src/img/apparel.jpg" class="img-responsive">
-
-                                    </img>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </section>
             </t>
