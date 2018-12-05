@@ -6,7 +6,7 @@
       <field name="name">Artwork Requests</field>
       <field name="model">virtual.artwork</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree editable="bottom" create="false">
           <field name="customer_name"/>
           <field name="instructions"/>
           <field name="artwork_file"/>
@@ -15,7 +15,7 @@
           <field name="jobType_id"/>
           <field name="outputformat_id"/>
           <field name="turnaround_id"/>
-          <!-- <field name="size_id"/> -->
+          <field name="service_type"/>
         </tree>
       </field>
     </record>

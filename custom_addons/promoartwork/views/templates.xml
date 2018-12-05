@@ -341,7 +341,7 @@
                                 <div class="row" style="padding-top:10px;">
                                     <div class="col-md-3">Upload File (jpg, gif, zip or pdf)</div>
                                     <div class="col-md-9">
-                                        <input type="file" class="" accept="image/*, .pdf, .zip" required="" id="requested_file" name="requested_file"/>
+                                        <input type="file" class="" accept=".pdf, .zip, .psd" required="" id="requested_file" name="requested_file"/>
                                     </div>
                                 </div>
                                 <div class="row" style="padding-top:10px;">
@@ -369,6 +369,7 @@
                                 </div>  
                                 <div class="row" style="padding-top:10px;">
                                     <div class="col-md-12 text-center">
+                                        <input type="hidden" t-att-value="service_name" name="service_name"/>
                                         <input type="submit" class="btn btn-primary btn-lg o_website_form_send"/>
                                         <input type="reset" class="btn btn-primary btn-lg o_website_form_send"/>
                                         <span id="o_website_form_result"></span> 

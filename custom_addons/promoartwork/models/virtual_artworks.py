@@ -14,6 +14,7 @@ class VirtualOrders(models.Model):
     jobType_id = fields.Many2one('job.types',string="Job Type")
     outputformat_id = fields.Many2one('output.format',string="Output Format")
     turnaround_id = fields.Many2one('turnaround.time',string="Turnaround Time")
+    service_type = fields.Char()
     # size_id = fields.Many2one('size.properties',string="Size")
 
 
