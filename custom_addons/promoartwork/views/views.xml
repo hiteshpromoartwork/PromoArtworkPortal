@@ -2,11 +2,44 @@
   <data>
     <!-- explicit list view definition -->
     
-    <record model="ir.ui.view" id="orders">
+    <record model="ir.ui.view" id="orders_tree">
       <field name="name">Artwork Requests</field>
       <field name="model">virtual.artwork</field>
       <field name="arch" type="xml">
-        <tree editable="bottom" create="false">
+        <tree create="false">
+          <field name="name"/>
+          <field name="customer_name"/>
+          <field name="instructions"/>
+          <field name="artwork_file"/>
+          <!-- <field name="color_id"/> -->
+          <field name="process_id"/>
+          <!-- <field name="jobType_id"/> -->
+          <field name="outputformat_id"/>
+          <field name="turnaround_id"/>
+          <field name="service_type"/>
+          <field name="employee"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="orders_form">
+      <field name="name">Artwork Requests</field>
+      <field name="model">virtual.artwork</field>
+      <field name="arch" type="xml">
+        <form create="false">
+          <group>
+            <group>
+              <field name="name"/>
+              <field name="artwork_file"/>
+              <field name="service_type"/>
+              <field name="instructions"/>
+            </group>
+            <group>
+              <field name="process_id"/>
+              <field name="outputformat_id"/>
+              <field name="turnaround_id"/>
+            </group>
+          </group>
+          <field name="name"/>
           <field name="customer_name"/>
           <field name="instructions"/>
           <field name="artwork_file"/>
@@ -16,7 +49,8 @@
           <field name="outputformat_id"/>
           <field name="turnaround_id"/>
           <field name="service_type"/>
-        </tree>
+          <field name="employee"/>
+        </form>
       </field>
     </record>
 

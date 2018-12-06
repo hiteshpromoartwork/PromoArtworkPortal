@@ -78,7 +78,7 @@ class RequestForm(http.Controller):
                 'outputformat_id' : int(kw.get('output_format')),
                 'turnaround_id' : int(kw.get('turnaround_time')),
                 'service_type' : kw.get('service_name'),
-                'required_size' : str(kw.get('size_1')+'X'+kw.get('size_2')+" "+ request.env['size.properties'].sudo().search([('id','=',int(kw.get('size_property')))]).name)
+                'required_size' : str(kw.get('size_1')+'X'+kw.get('size_2')+" "+ str(request.env['size.properties'].sudo().search([('id','=',int(kw.get('size_property')))]).name))
             })
         print("sdfsdf")
         if status:
