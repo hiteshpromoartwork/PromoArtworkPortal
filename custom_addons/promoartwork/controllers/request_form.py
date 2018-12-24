@@ -1,6 +1,10 @@
 from odoo import http
 from odoo.http import request
 import base64
+from os import fstat
+from mmap import mmap
+import mimetypes
+from odoo.addons.web.controllers.main import content_disposition
 
 class RequestForm(http.Controller):
 
@@ -59,27 +63,30 @@ class RequestForm(http.Controller):
     @http.route('/send_art/form_submit', auth='user', website=True, csrf=False)
     def send_art(self, **kw):
         # import pdb;pdb.set_trace()
-        Attachment = request.env['ir.attachment']
-        attachment_id = Attachment.sudo().create({
-                'name': kw.get('requested_file').filename,
-                'datas_fname': kw.get('requested_file').filename,
-                'res_name': kw.get('requested_file').filename,
-                'type': 'binary',   
-                'res_model': 'virtual.artwork',
-                'datas': base64.b64encode(kw.get('requested_file').read()),
-            })
+        # Attachment = request.env['ir.attachment']
+        # attachment_id = Attachment.sudo().create({
+        #         'name': kw.get('requested_file').filename,
+        #         'datas_fname': kw.get('requested_file').filename,
+        #         'res_name': kw.get('requested_file').filename,
+        #         'type': 'binary',   
+        #         'res_model': 'virtual.artwork',
+        #         'datas': base64.b64encode(kw.get('requested_file').read()),
+        #     })
         if kw:
-            status = request.env['virtual.artwork'].sudo().create({
+            # import pdb;pdb.set_trace()
+            vals ={                
                 'name' : kw.get('po'),
                 'customer_name' : request.env.user.partner_id.id,
-                'artwork_file' : attachment_id,
+                'artwork_file' : base64.b64encode(kw.get('requested_file').read()),
+                'artwork_file_name' : kw.get('requested_file').filename,
                 'instructions' : kw.get('instructions'),
                 'process_id' : int(kw.get('imprint_process')) if kw.get('imprint_process') else None,
                 'outputformat_id' : int(kw.get('output_format')),
                 'turnaround_id' : int(kw.get('turnaround_time')),
                 'service_type' : kw.get('service_name'),
                 'required_size' : str(kw.get('size_1')+'X'+kw.get('size_2')+" "+ str(request.env['size.properties'].sudo().search([('id','=',int(kw.get('size_property')))]).name))
-            })
+            }
+            status = request.env['virtual.artwork'].sudo().create(vals)
         print("sdfsdf")
         if status:
             return "Done"
@@ -103,3 +110,15 @@ class RequestForm(http.Controller):
         if status:
             return "Doine"
     
+    @http.route('/download_artwork/<model("virtual.artwork"):order>', auth='user', website=True, csrf=False)
+    def download_artwork(self, order, **kw):
+        # import pdb;pdb.set_trace()
+        if order:
+            return http.request.make_response(
+                    base64.b64decode(order.artwork_file),
+                    headers = [
+                        ('Content-Type', mimetypes.guess_type('{}'.format(order.artwork_file_name))),
+                        ('Content-Disposition',content_disposition('{}'.format(order.artwork_file_name)))
+                    ]
+                )
+        

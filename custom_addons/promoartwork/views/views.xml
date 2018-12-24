@@ -6,11 +6,13 @@
       <field name="name">Artwork Requests</field>
       <field name="model">virtual.artwork</field>
       <field name="arch" type="xml">
-        <tree create="false">
+        <tree>
           <field name="name"/>
           <field name="customer_name"/>
           <field name="instructions"/>
-          <field name="artwork_file"/>
+          <field name="artwork_file"  />
+          <field name="artwork_file_name"  />
+          <!-- <button name="action_download_file" type="object" string="Download" class="oe_highlight"/> -->
           <!-- <field name="color_id"/> -->
           <field name="process_id"/>
           <!-- <field name="jobType_id"/> -->
@@ -26,30 +28,31 @@
       <field name="model">virtual.artwork</field>
       <field name="arch" type="xml">
         <form create="false">
-          <group>
+          <header>
+            <button name="action_download_file" type="object" string="Download File" class="oe_highlight"/>
+            <field name="state" widget="statusbar"/>
+          </header>
+          <sheet>
             <group>
-              <field name="name"/>
-              <field name="artwork_file"/>
-              <field name="service_type"/>
-              <field name="instructions"/>
+              <group>
+                <field name="name"/>
+                <field name="customer_name"/>
+                <field name="employee"/>
+                <!-- <label for="action_download_file"/>
+                <button name="action_download_file" type="object" string="Download" class="oe_inline oe_highlight"/> -->
+                <field name="service_type"/>
+                <field name="instructions"/>
+              </group>
+              <group>
+                <field name="process_id"/>
+                <field name="outputformat_id"/>
+                <field name="turnaround_id"/>
+                <field name="service_type"/>
+                <field name="process_id"/>
+                <field name="jobType_id"/>
+              </group>
             </group>
-            <group>
-              <field name="process_id"/>
-              <field name="outputformat_id"/>
-              <field name="turnaround_id"/>
-            </group>
-          </group>
-          <field name="name"/>
-          <field name="customer_name"/>
-          <field name="instructions"/>
-          <field name="artwork_file"/>
-          <!-- <field name="color_id"/> -->
-          <field name="process_id"/>
-          <field name="jobType_id"/>
-          <field name="outputformat_id"/>
-          <field name="turnaround_id"/>
-          <field name="service_type"/>
-          <field name="employee"/>
+          </sheet>
         </form>
       </field>
     </record>
