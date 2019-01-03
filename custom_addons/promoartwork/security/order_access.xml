@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data noupdate="0">
+
+    <!-- <record id="group_purchase_user" model="res.groups">
+        <field name="name">Purchase User</field>
+    </record>
+
+    <record id="group_purchase_pm" model="res.groups">
+        <field name="name">Purchase Manager</field>
+        <field name="implied_ids" eval="[(4, ref('group_purchase_user'))]"/>
+    </record>
+
+    <record id="group_purchase_qa" model="res.groups">
+        <field name="name">Purchase QA</field>
+        <field name="implied_ids" eval="[(4, ref('group_purchase_user'))]"/>
+    </record> -->
+
+</data>
+

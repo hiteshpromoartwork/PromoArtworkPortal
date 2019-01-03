@@ -62,21 +62,11 @@ class RequestForm(http.Controller):
 
     @http.route('/send_art/form_submit', auth='user', website=True, csrf=False)
     def send_art(self, **kw):
-        # import pdb;pdb.set_trace()
-        # Attachment = request.env['ir.attachment']
-        # attachment_id = Attachment.sudo().create({
-        #         'name': kw.get('requested_file').filename,
-        #         'datas_fname': kw.get('requested_file').filename,
-        #         'res_name': kw.get('requested_file').filename,
-        #         'type': 'binary',   
-        #         'res_model': 'virtual.artwork',
-        #         'datas': base64.b64encode(kw.get('requested_file').read()),
-        #     })
         if kw:
-            # import pdb;pdb.set_trace()
+            import pdb;pdb.set_trace()
             vals ={                
                 'name' : kw.get('po'),
-                'customer_name' : request.env.user.partner_id.id,
+                'customer_name' : request.env.user.sudo().partner_id.id,
                 'artwork_file' : base64.b64encode(kw.get('requested_file').read()),
                 'artwork_file_name' : kw.get('requested_file').filename,
                 'instructions' : kw.get('instructions'),
@@ -89,7 +79,15 @@ class RequestForm(http.Controller):
             status = request.env['virtual.artwork'].sudo().create(vals)
         print("sdfsdf")
         if status:
-            return "Done"
+            return request.redirect('/order/submit/%s'%status.id)
+
+    @http.route('/order/submit/<model("virtual.artwork"):order>', auth='user', website=True, csrf=False)
+    def order_submitted(self, order, **kw):
+        import pdb;pdb.set_trace()
+        print(order.sudo().name)
+        return request.render('promoartwork.order_submitted', {
+            'order': order,
+        })
 
     @http.route('/request_quote/form_submit', auth='user', website=True, csrf=False)
     def request_quote(self, **kw):

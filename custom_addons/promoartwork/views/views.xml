@@ -19,7 +19,7 @@
           <field name="outputformat_id"/>
           <field name="turnaround_id"/>
           <field name="service_type"/>
-          <field name="employee"/>
+          <field name="employee" />
         </tree>
       </field>
     </record>
